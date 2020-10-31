@@ -1,0 +1,69 @@
+{
+  "package": {
+    "scripts": {
+      "lint": "eslint src --color",
+      "test:coverage": "react-scripts test --coverage",
+      "format:check": "prettier --check \"src/**/*.{js,jsx,json,ts,tsx,scss,md}\"",
+      "format": "prettier --write \"src/**/*.{js,jsx,json,ts,tsx,scss,md}\" "
+    },
+    "dependencies": {
+      "@material-ui/core": "^4.11.0",
+      "@material-ui/icons": "^4.9.1",
+      "fontsource-roboto": "^3.0.3",
+      "node-sass": "^4.14.0",
+      "prop-types": "^15.7.2",
+      "react-router-dom": "^5.1.2",
+      "web-vitals": "^0.2.4"
+    },
+    "devDependencies": {
+      "@testing-library/jest-dom": "^5.11.5",
+      "@testing-library/react": "^11.1.0",
+      "@testing-library/user-event": "^12.1.10",
+      "husky": "^4.3.0",
+      "lint-staged": "^10.5.1",
+      "prettier": "^2.1.2"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended"
+      ],
+      "plugins": ["react", "jsx-a11y"],
+      "rules": {
+        "no-console": [
+          "error",
+          {
+            "allow": ["warn", "error"]
+          }
+        ],
+        "react/react-in-jsx-scope": "off",
+        "react/sort-prop-types": 2
+      }
+    },
+    "prettier": {
+      "printWidth": 120,
+      "trailingComma": "all",
+      "tabWidth": 2,
+      "semi": true,
+      "singleQuote": true,
+      "bracketSpacing": true,
+      "useTabs": false,
+      "jsxBracketSameLine": true,
+      "jsxSingleQuote": true,
+      "arrowParens": "avoid",
+      "endOfLine": "lf"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "src/**/*.{js,jsx,ts,tsx}": "eslint",
+      "src/**/*.{js,jsx,json,ts,tsx,scss,md}": "prettier --write"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "name": "cra-template-jbase",
+  "version": "1.0.0",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "jbase"
+  ],
+  "description": "Personal base template for Create React App.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnandresmedina/cra-template-jbase.git",
+    "directory": "packages/cra-template"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "bugs": {
+    "url": "https://github.com/johnandresmedina/cra-template-jbase/issues"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "scripts": {
+    "lint": "eslint template --color",
+    "format:check": "prettier --check \"template/src/**/*.{js,jsx,json,ts,tsx,scss,md}\"",
+    "format": "prettier --write \"template/src/**/*.{js,jsx,json,ts,tsx,scss,md}\" "
+  },
+  "devDependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.1",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "fontsource-roboto": "^3.0.3",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "node-sass": "^4.14.0",
+    "prettier": "^2.1.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.1.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [
+      "react",
+      "jsx-a11y"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off"
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "useTabs": false,
+    "jsxBracketSameLine": true,
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid",
+    "endOfLine": "lf"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "template/src/**/*.{js,jsx,ts,tsx}": "eslint",
+    "template/src/**/*.{js,jsx,json,ts,tsx,scss,md}": "prettier --write"
+  }
+}
