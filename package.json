@@ -14,16 +14,6 @@
     "directory": "packages/cra-template"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">=10"
-  },
-  "bugs": {
-    "url": "https://github.com/johnandresmedina/cra-template-jbase/issues"
-  },
-  "files": [
-    "template",
-    "template.json"
-  ],
   "scripts": {
     "lint": "eslint template --color",
     "format:check": "prettier --check \"template/src/**/*.{js,jsx,json,ts,tsx,scss,md}\"",
@@ -58,12 +48,11 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:jsx-a11y/recommended"
+      "react-app/jest",
+      "plugin:jsx-a11y/recommended",
+      "plugin:react-hooks/recommended"
     ],
     "plugins": [
-      "react",
       "jsx-a11y"
     ],
     "rules": {
@@ -91,5 +80,12 @@
   "lint-staged": {
     "template/src/**/*.{js,jsx,ts,tsx}": "eslint",
     "template/src/**/*.{js,jsx,json,ts,tsx,scss,md}": "prettier --write"
-  }
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ]
 }
