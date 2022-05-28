@@ -1,22 +1,14 @@
-import 'fontsource-roboto';
-
 import React from 'react';
-import { render } from 'react-dom';
-import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-
+import ReactDOM from 'react-dom/client';
+import './index.scss';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Main from './main/Main';
-import theme from './theme';
 
-render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Main />
-    </ThemeProvider>
+    <App />
   </React.StrictMode>,
-  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
